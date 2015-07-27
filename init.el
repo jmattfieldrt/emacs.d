@@ -58,7 +58,7 @@
     ("~/org/agenda/work.org" "~/org/agenda/home.org" "~/org/agenda/education.org")))
  '(send-mail-function (quote mailclient-send-it))
  '(user-mail-address "jeff.mattfield@quantumretail.com")
- '(win-switch-idle-time 5))
+ '(win-switch-idle-time 3))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -68,4 +68,6 @@
  '(message-header-newsgroups ((t (:foreground "color-29" :slant italic :weight bold))))
  '(message-header-other ((t (:foreground "color-72"))))
  '(message-header-subject ((t (:foreground "color-29" :weight bold))))
- '(message-header-to ((t (:foreground "color-29" :weight bold)))))
+ '(message-header-to ((t (:foreground "color-29" :weight bold))))
+ '(org-document-info ((t (:foreground "color-239"))))
+ '(org-document-title ((t (:foreground "color-239" :weight bold)))))
