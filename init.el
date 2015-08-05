@@ -11,7 +11,7 @@
       "http://melpa.org/packages/"))
 (package-initialize) 
 (setq jpm-required-packages
-      (list 'win-switch 'org 'launchctl))
+      (list 'win-switch 'org 'launchctl 'magit))
 (dolist (package jpm-required-packages)
   (when (not (package-installed-p package))
     (package-refresh-contents)
