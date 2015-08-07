@@ -1,3 +1,34 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(custom-safe-themes
+   (quote
+    ("ed526706173c849daffe1f9c039d225adc313a246f69849f2185028266d7940c" default)))
+ '(global-hl-line-mode t)
+ '(ido-mode (quote both) nil (ido))
+ '(inhibit-startup-screen t)
+ '(menu-bar-mode nil)
+ '(org-agenda-files
+   (quote
+    ("~/org/agenda/work.org" "~/org/agenda/home.org" "~/org/agenda/education.org")))
+ '(win-switch-idle-time 3))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(hl-line ((t (:background "color-234"))))
+ '(message-header-cc ((t (:foreground "color-29"))))
+ '(message-header-newsgroups ((t (:foreground "color-29" :slant italic :weight bold))))
+ '(message-header-other ((t (:foreground "color-72"))))
+ '(message-header-subject ((t (:foreground "color-29" :weight bold))))
+ '(message-header-to ((t (:foreground "color-29" :weight bold))))
+ '(org-document-info ((t (:foreground "color-239"))))
+ '(org-document-title ((t (:foreground "color-239" :weight bold)))))
+
 ;;; Package management
 (require 'package)
 (add-to-list 'package-archives
@@ -43,33 +74,3 @@
 (setq linum-format 'linum-format-func)
 (add-hook 'prog-mode-hook 'linum-mode)
 
-;;; All of the settings I was too lazy to type by hand
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(global-hl-line-mode t)
- '(ido-mode (quote both) nil (ido))
- '(inhibit-startup-screen t)
- '(menu-bar-mode nil)
- '(org-agenda-files
-   (quote
-    ("~/org/agenda/work.org" "~/org/agenda/home.org" "~/org/agenda/education.org")))
- '(send-mail-function (quote mailclient-send-it))
- '(user-mail-address "jeff.mattfield@quantumretail.com")
- '(win-switch-idle-time 3))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(hl-line ((t (:background "color-234"))))
- '(message-header-cc ((t (:foreground "color-29"))))
- '(message-header-newsgroups ((t (:foreground "color-29" :slant italic :weight bold))))
- '(message-header-other ((t (:foreground "color-72"))))
- '(message-header-subject ((t (:foreground "color-29" :weight bold))))
- '(message-header-to ((t (:foreground "color-29" :weight bold))))
- '(org-document-info ((t (:foreground "color-239"))))
- '(org-document-title ((t (:foreground "color-239" :weight bold)))))
