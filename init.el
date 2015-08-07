@@ -10,6 +10,7 @@
  '(global-hl-line-mode t)
  '(ido-mode (quote both) nil (ido))
  '(inhibit-startup-screen t)
+ '(initial-scratch-message nil)
  '(menu-bar-mode nil)
  '(org-agenda-files
    (quote
@@ -58,7 +59,6 @@
 (setq mac-option-modifier 'super)
 
 ;;; Turn other-window into a window switching mode
-(require 'win-switch)
 (global-set-key "\C-xo" 'win-switch-dispatch)
 
 ;;; Org Mode setup
