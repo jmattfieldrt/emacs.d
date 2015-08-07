@@ -3,10 +3,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
  '(column-number-mode t)
- '(custom-safe-themes
-   (quote
-    ("ed526706173c849daffe1f9c039d225adc313a246f69849f2185028266d7940c" default)))
+ '(custom-enabled-themes (quote (wombat)))
  '(global-hl-line-mode t)
  '(ido-mode (quote both) nil (ido))
  '(inhibit-startup-screen t)
