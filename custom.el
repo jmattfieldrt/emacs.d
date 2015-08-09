@@ -14,8 +14,7 @@
  '(menu-bar-mode nil)
  '(org-agenda-files
    (quote
-    ("~/org/agenda/work.org" "~/org/agenda/home.org" "~/org/agenda/education.org")))
- '(win-switch-idle-time 3))
+    ("~/org/agenda/work.org" "~/org/agenda/home.org" "~/org/agenda/education.org"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

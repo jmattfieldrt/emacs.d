@@ -28,6 +28,7 @@
 
 ;;; Turn other-window into a window switching mode
 (require 'win-switch)
+(setq win-switch-idle-time 2)
 (global-set-key "\C-xo" 'win-switch-dispatch)
 
 ;;; Org Mode setup
