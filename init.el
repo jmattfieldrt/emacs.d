@@ -67,10 +67,8 @@
 (load "~/.emacs.d/.secrets" 'noerror)
 
 ;; Theme
-(setq custom-safe-themes '("fe243221e262fe5144e89bb5025e7848cd9fb857ff5b2d8447d115e58fede8f7" ; flatland
-			   "394504bd559027641b544952d6e9e1c6dcb306b4d1b2c4ad6b98d3e6b5459683" ; waher
-			   default))
-(load-theme 'waher)
+(load-theme 'flatland t)
+(load-theme 'waher t)
 
 ;; Highlight current line
 (global-hl-line-mode)
