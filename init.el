@@ -10,7 +10,7 @@
 
 ;; Install my favorite packages automatically
 (setq my/required-packages
-      (list 'win-switch 'org 'launchctl 'magit 'use-package))
+      (list 'win-switch 'org 'launchctl 'magit 'use-package 'waher-theme 'flatland-theme))
 (dolist (package my/required-packages)
   (when (not (package-installed-p package))
     (package-refresh-contents)
