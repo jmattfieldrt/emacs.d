@@ -27,7 +27,7 @@
 (menu-bar-mode -1)
 (setq inhibit-startup-screen t
       initial-scratch-message nil)
-
+(setq-default fill-column 80)
 
 ;; Backup
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups"))) ; 
