@@ -41,10 +41,8 @@
 	 ("C-c a" . org-agenda)
 	 ("C-c b" . org-iswitchb))
   :config
-  (setq org-agenda-files
-      '("~/org/agenda/work.org"
-	"~/org/agenda/home.org"
-	"~/org/agenda/education.org"))
+  (setq org-agenda-files '("~/org/agenda/work.org" "~/org/agenda/home.org" "~/org/agenda/education.org")
+	org-log-into-drawer t)
   (set-face-attribute 'org-document-info nil :foreground "color-239")
   (set-face-attribute 'org-document-title nil :foreground "color-239" :weight 'bold))
 
