@@ -40,6 +40,12 @@
 ;; Set Super key for OS X
 (setq mac-option-modifier 'super)
 
+;; A few keys not playing nice in Org Mode
+(define-key input-decode-map "\e[1;10A" [S-M-up])
+(define-key input-decode-map "\e[1;10B" [S-M-down])
+(define-key input-decode-map "\e[1;10C" [S-M-right])
+(define-key input-decode-map "\e[1;10D" [S-M-left])
+
 ;; Turn other-window into a window switching mode
 (use-package win-switch
   :init
@@ -82,8 +88,6 @@
 ;; Highlight current line
 (global-hl-line-mode)
 (set-face-attribute 'hl-line nil :background "Color-234")
-
-;;; Miscellaneous settings
 
 ;; Save customize settings in their own file
 ;; if I happen to use it
