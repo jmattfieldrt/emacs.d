@@ -8,14 +8,26 @@
 	     '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 
-;; Install my favorite packages automatically
-(setq my/required-packages
-      (list 'win-switch 'org 'launchctl 'magit 'use-package 'waher-theme 'flatland-theme))
-(dolist (package my/required-packages)
+;; Install packages
+(defvar jmattfield/required-packages
+  '(win-switch
+    org
+    launchctl
+    magit
+    use-package
+    zen-and-art-theme))
+
+(dolist (package jmattfield/required-packages)
   (when (not (package-installed-p package))
     (package-refresh-contents)
     (package-install package)))
 (require 'use-package)
+
+;; Startup options
+(menu-bar-mode -1)
+(setq inhibit-startup-screen t
+      initial-scratch-message nil)
+
 
 ;; Backup
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups"))) ; 
@@ -65,23 +77,13 @@
 (load "~/.emacs.d/.secrets" 'noerror)
 
 ;; Theme
-(load-theme 'flatland t)
-(load-theme 'waher t)
+(load-theme 'zen-and-art t)
 
 ;; Highlight current line
 (global-hl-line-mode)
 (set-face-attribute 'hl-line nil :background "Color-234")
 
 ;;; Miscellaneous settings
-
-;; Hide the menu bar
-(menu-bar-mode -1)
-
-;; Startup screen?  No thanks.
-(setq inhibit-startup-screen t)
-
-;; Keep scratch buffer empty
-(setq initial-scratch-message nil)
 
 ;; Save customize settings in their own file
 ;; if I happen to use it
