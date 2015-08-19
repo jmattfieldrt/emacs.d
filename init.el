@@ -28,6 +28,7 @@
 (setq inhibit-startup-screen t
       initial-scratch-message nil)
 (setq-default fill-column 80)
+(when window-system (set-frame-size (selected-frame) 230 70))
 
 ;; Backup
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups"))) ; 
