@@ -26,9 +26,14 @@
 ;; Startup options
 (menu-bar-mode -1)
 (setq inhibit-startup-screen t
-      initial-scratch-message nil)
+      initial-scratch-message nil
+      sentence-end-double-space nil)
 (setq-default fill-column 80)
-(when window-system (set-frame-size (selected-frame) 230 70))
+(when window-system
+    (progn
+      (set-frame-size (selected-frame) 230 70)
+      (scroll-bar-mode -1)
+      (tool-bar-mode -1)))
 
 ;; Backup
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups"))) ; 
@@ -39,13 +44,14 @@
       `((".*" ,temporary-file-directory t)))
 
 ;; Set Super key for OS X
-(setq mac-option-modifier 'super)
+;;(setq mac-option-modifier 'super)
 
-;; A few keys not playing nice in Org Mode
-(define-key input-decode-map "\e[1;10A" [S-M-up])
-(define-key input-decode-map "\e[1;10B" [S-M-down])
-(define-key input-decode-map "\e[1;10C" [S-M-right])
-(define-key input-decode-map "\e[1;10D" [S-M-left])
+;; A few tty keys not playing nice in Org Mode
+(when (not window-system)
+  (define-key input-decode-map "\e[1;10A" [S-M-up])
+  (define-key input-decode-map "\e[1;10B" [S-M-down])
+  (define-key input-decode-map "\e[1;10C" [S-M-right])
+  (define-key input-decode-map "\e[1;10D" [S-M-left]))
 
 ;; Turn other-window into a window switching mode
 (use-package win-switch
@@ -61,9 +67,11 @@
 	 ("C-c b" . org-iswitchb))
   :config
   (setq org-agenda-files '("~/org/agenda/work.org" "~/org/agenda/home.org" "~/org/agenda/education.org")
-	org-log-into-drawer t)
-  (set-face-attribute 'org-document-info nil :foreground "color-239")
-  (set-face-attribute 'org-document-title nil :foreground "color-239" :weight 'bold))
+	org-log-into-drawer t
+	org-latex-packages-alist '(("" "tabu" nil)
+				   ("" "hyperref" nil))))
+;  (set-face-attribute 'org-document-info nil :foreground "#345678")
+;  (set-face-attribute 'org-document-title nil :foreground "#345678" :weight 'bold))
 
 ;; Tweak mode line
 (setq column-number-mode t)
@@ -88,7 +96,7 @@
 
 ;; Highlight current line
 (global-hl-line-mode)
-(set-face-attribute 'hl-line nil :background "Color-234")
+(set-face-attribute 'hl-line nil :background "#000000")
 
 ;; Save customize settings in their own file
 ;; if I happen to use it
