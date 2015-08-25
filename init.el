@@ -33,7 +33,8 @@
     (progn
       (set-frame-size (selected-frame) 230 70)
       (scroll-bar-mode -1)
-      (tool-bar-mode -1)))
+      (tool-bar-mode -1)
+      (set-face-attribute 'default nil :height 100)))
 
 ;; Backup
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups"))) ; 
