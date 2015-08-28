@@ -25,27 +25,31 @@
 
 ;; Startup options
 (menu-bar-mode -1)
+(blink-cursor-mode -1)
 (setq inhibit-startup-screen t
       initial-scratch-message nil
       sentence-end-double-space nil)
 (setq-default fill-column 80)
 (when window-system
-    (progn
-      (set-frame-size (selected-frame) 230 70)
-      (scroll-bar-mode -1)
-      (tool-bar-mode -1)
-      (set-face-attribute 'default nil :height 100)))
+  (set-frame-size (selected-frame) 230 70)
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1)
+  
+  ;; Change font size when monitor dpi crosses visibility threshold.
+  ;; Unfortunately, this doesn't work as-is because x-display-pixel-width is the
+  ;; monitors' combined width. Need to use display-monitor-attributes-list to
+  ;; get resolution of monitor that dominates the Emacs frame.
+  (if (> (x-display-pixel-width) 2000)
+      (set-face-attribute 'default nil :height 100)
+    (set-face-attribute 'default nil :height 120)))
 
 ;; Backup
-(setq backup-directory-alist '(("." . "~/.emacs.d/backups"))) ; 
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups"))) ; keep backups in one place
 (setq delete-old-versions -1)                                 ; keep all versions indefinitely
 
 ;; Auto-save
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
-
-;; Set Super key for OS X
-;;(setq mac-option-modifier 'super)
 
 ;; A few tty keys not playing nice in Org Mode
 (when (not window-system)
