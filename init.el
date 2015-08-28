@@ -97,10 +97,12 @@
 
 ;; Highlight current line
 (global-hl-line-mode)
-(set-face-attribute 'hl-line nil :background "#000000")
+(set-face-attribute 'hl-line nil :background "#080808")
 
-;; Save customize settings in their own file
-;; if I happen to use it
+;; Server mode? Sure.
+(server-start)
+
+;; Save customize settings in their own file if I happen to use it
 ;; THIS MUST REMAIN AT THE BOTTOM OF THIS FILE
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
