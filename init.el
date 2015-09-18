@@ -98,7 +98,7 @@
 
 ;; Theme
 (load-theme 'zen-and-art t)
-(set-face-attribute 'font-lock-comment-face nil :foreground "#606868" :slant 'italic) ; lighten comments to make them visible with this theme
+(set-face-attribute 'font-lock-comment-face nil :foreground "#404a4a" :weight 'normal :slant 'italic) ; lighten comments to make them visible with this theme
 
 ;; Highlight current line
 (global-hl-line-mode)
