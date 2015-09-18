@@ -51,7 +51,7 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
-;; A few tty keys not playing nice in Org Mode
+;; Make a few tty keys play nice in Org Mode
 (when (not window-system)
   (define-key input-decode-map "\e[1;10A" [S-M-up])
   (define-key input-decode-map "\e[1;10B" [S-M-down])
@@ -88,15 +88,15 @@
 (setq linum-format 'linum-format-func)
 (add-hook 'prog-mode-hook 'linum-mode)
 
-;; Ido Mode
+;; Enable Ido Mode
 (use-package ido
   :config
   (ido-mode t))
 
-;; Stuff I don't want in my repo
+;; Import settings not kept in source control
 (load "~/.emacs.d/.secrets" 'noerror)
 
-;; Theme
+;; Set up color theme
 (load-theme 'zen-and-art t)
 (set-face-attribute 'font-lock-comment-face nil :foreground "#404a4a" :weight 'normal :slant 'italic) ; lighten comments to make them visible with this theme
 
@@ -104,11 +104,11 @@
 (global-hl-line-mode)
 (set-face-attribute 'hl-line nil :background "#080808")
 
-;; Server mode? Sure.
+;; Server mode? Sure, why not?
 (server-start)
 
 ;; Save customize settings in their own file if I happen to use it
-;; THIS MUST REMAIN AT THE BOTTOM OF THIS FILE
+;; This must remain at the bottom of this file
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
