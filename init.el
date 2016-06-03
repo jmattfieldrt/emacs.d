@@ -31,7 +31,7 @@
       sentence-end-double-space nil)
 (setq-default fill-column 80)
 (when window-system
-  (set-frame-size (selected-frame) 230 70)
+  (set-frame-size (selected-frame) 235 70)
   (scroll-bar-mode -1)
   (tool-bar-mode -1)
   
@@ -73,6 +73,7 @@
   :config
   (setq org-agenda-files '("~/org/agenda/work.org" "~/org/agenda/home.org" "~/org/agenda/education.org")
 	org-log-into-drawer t
+	org-log-done 'time
 	org-latex-packages-alist '(("" "tabu" nil)
 				   ("" "hyperref" nil))))
 ;  (set-face-attribute 'org-document-info nil :foreground "#345678")
@@ -82,10 +83,12 @@
 (setq column-number-mode t)
 
 ;; Customize margin line numbering
+;;; right-align numbers
 (defun linum-format-func (line)
   (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
     (propertize (format (format "%%%dd " w) line) 'face 'linum)))
 (setq linum-format 'linum-format-func)
+;;; show line numbers when in a programming major mode
 (add-hook 'prog-mode-hook 'linum-mode)
 
 ;; Enable Ido Mode
@@ -104,11 +107,10 @@
 (global-hl-line-mode)
 (set-face-attribute 'hl-line nil :background "#080808")
 
-;; Server mode? Sure, why not?
-(server-start)
-
 ;; Save customize settings in their own file if I happen to use it
 ;; This must remain at the bottom of this file
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
+;; Start server mode
+(server-mode)
